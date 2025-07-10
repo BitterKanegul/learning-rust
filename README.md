@@ -7,4 +7,4 @@ Since our DFS is a collection, we will have to figure out how to dynamically ass
   - Arena? - Finite amount of huge memory we allocate at once. Not scalable
   - RC Cells? - arc based GC is a lil sus
 
-  -
+The default hashmap collection should already handle dynamically sizing things.
