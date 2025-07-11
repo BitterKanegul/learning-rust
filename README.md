@@ -53,6 +53,13 @@ Slices are references to parts of a collection.
 slice datastructure:
   ptr to start, len
 
+deref coersions??
+
+structs, enums, generics, traits
+
+Generics and Traits generalize datatypes:
+
+One can restrict generic types to those that implement certain traits like PartialOrd for example
 ```
 
 ===========================================================================
