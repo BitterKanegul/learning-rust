@@ -37,6 +37,8 @@ Borrow rules:
 -- can't mut/ immut borrow if already mutably borrowed
 -- can't mut borrow if already immut borrowed
 -- can imut borrow many times.
+
+-- Lifetimes are a measure/ logical clock determining how long a reference should last.
 Stuff on heap is borrowed into another reference via assignment
 Old stuff is dropped as well so s= new(1); s= new(2)
 
@@ -45,7 +47,11 @@ https://doc.rust-lang.org/book/ch08-00-common-collections.html
 The standard collections are found at : https://doc.rust-lang.org/std/collections/index.html
 
 Heap shenanigans.
+Iter + Enumerate is used to go over each element in the collection,
 
+Slices are references to parts of a collection.
+slice datastructure:
+  ptr to start, len
 
 ```
 
