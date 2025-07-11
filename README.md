@@ -28,8 +28,36 @@ Some ideas from a competitive prog website: https://rustp.org/data-structures/
     - inserts can be done at an inbetween index but ofc shitty perf
         - .insert(idx, element)
         - pop(), remove(idx), swap_remove(idx), get(idx)-> option type.
+
+clone trait allows things to be copied deeply.
+copy trait is for the stack-only data.
+Stuff on heap is borrowed into another reference via assignment
+Old stuff is dropped as well so s= new(1); s= new(2)
+
+Collections:
+https://doc.rust-lang.org/book/ch08-00-common-collections.html
+The standard collections are found at : https://doc.rust-lang.org/std/collections/index.html
+
+Heap shenanigans.
+
+
 ```
 
+===========================================================================
 Some interesting projects I could try:
 - Implement Elements of Differentiable Programming
 - Gonzalo Navarro's book on succinct data structures.
+- Porting parts of Ghidra's analysis and decompilation engine into Rust.
+
+==========================================================================
+Performance and Debugging in Rust:
+Nethercote's book is seminal: https://nnethercote.github.io/perf-book/introduction.html
+- coz is great, performs causal profiling
+
+if you are using standard libraries, will have to build the stdlib with symbols: https://github.com/rust-lang/rust
+  - frame pointers maybe optimized out.
+  - mangling format maybe cool
+- gdb/lldb for the debugger
+- need to check out other debuggers
+
+=========================================================================
