@@ -29,3 +29,7 @@ Some ideas from a competitive prog website: https://rustp.org/data-structures/
         - .insert(idx, element)
         - pop(), remove(idx), swap_remove(idx), get(idx)-> option type.
 ```
+
+Some interesting projects I could try:
+- Implement Elements of Differentiable Programming
+- Gonzalo Navarro's book on succinct data structures.
