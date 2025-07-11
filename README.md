@@ -31,6 +31,12 @@ Some ideas from a competitive prog website: https://rustp.org/data-structures/
 
 clone trait allows things to be copied deeply.
 copy trait is for the stack-only data.
+
+Borrow rules:
+-- can't move out if borrowed
+-- can't mut/ immut borrow if already mutably borrowed
+-- can't mut borrow if already immut borrowed
+-- can imut borrow many times.
 Stuff on heap is borrowed into another reference via assignment
 Old stuff is dropped as well so s= new(1); s= new(2)
 

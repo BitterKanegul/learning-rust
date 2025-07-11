@@ -5,6 +5,12 @@ use rand::Rng;
 use std::cmp::Ordering;
 use std::io;
 fn main() {
+    let mut s = String::from("hello");
+
+    let r1 = &s;
+    let r2 = &s;
+
+    println!("{}, {}", r1, r2);
     println!("Guess the number:");
     let secret_number = rand::thread_rng().gen_range(1..=50);
     // println!("The secret number is {secret_number}");
