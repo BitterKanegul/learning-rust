@@ -7,11 +7,21 @@ use std::io;
 fn large<T: std::cmp::PartialOrd>(list: &[T]) -> &T {
     let mut largest = &list[0];
     for item in list {
-        if (item > largest) {
+        if item > largest {
             largest = item;
         }
     }
     largest
+}
+struct Group<T, U> {
+    x: T,
+    y: U,
+    size: usize,
+}
+impl<T, U> Group<T, U> {
+    fn x(&self) -> &T {
+        &self.x
+    }
 }
 fn main() {
     let mut s = String::from("hello");

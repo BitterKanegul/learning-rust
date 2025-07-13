@@ -60,6 +60,8 @@ structs, enums, generics, traits
 Generics and Traits generalize datatypes:
 
 One can restrict generic types to those that implement certain traits like PartialOrd for example
+
+
 ```
 
 ===========================================================================
@@ -80,3 +82,5 @@ if you are using standard libraries, will have to build the stdlib with symbols:
 - need to check out other debuggers
 
 =========================================================================
+Interesting Libraries:
+https://github.com/rust-bakery/nom
