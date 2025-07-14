@@ -54,6 +54,7 @@ URL: https://github.com/chasenorman/Canonical
         - atomic ordering and usize
         - arc
         - hashbrown hashmap
+        -  :w
     - search
     - stats
 
