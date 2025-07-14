@@ -21,6 +21,42 @@ URL: https://github.com/chasenorman/Canonical
       - Hashbrown: Rust port of Google's SwissTable hash map.
       Drop in replacement of Rust's standard Hashmap and Hashset types.
      https://docs.rs/hashbrown/latest/hashbrown/
+  - Divided into the following modules:
+    - core:
+      Uses:
+       - memory
+       - stats
+
+
+    - heuristic
+      Uses:
+        - Search::Next
+        - stats
+      Creates:
+        - div
+          (a,b,prior, breakpoint) -> f64
+          smoothly transitions between prior and a/b as b goes to breakpoint
+        - next
+           (first:Metainfo, second: Metainfo)-> Metainfo
+           Selects which metavariable to refine between two options.
+
+
+    - lib
+    - memory
+    - print
+    - prover
+      Uses:
+        - search
+        - core
+        - memory
+        - stats
+        - rayon's prelude
+        - atomic ordering and usize
+        - arc
+        - hashbrown hashmap
+    - search
+    - stats
+
 
 
 
