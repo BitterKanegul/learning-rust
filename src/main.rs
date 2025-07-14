@@ -10,7 +10,17 @@ use std::io;
 struct MyDisjointSet<T> {
     rootmap: HashMap<T, T>,
 }
-impl MyDisjointSet<T> {}
+impl<T> MyDisjointSet<T> {
+    fn init(&self) {}
+    fn getitem(&self, x: &T) -> &T {
+        return x;
+    }
+    fn add(&self, x: &T) {}
+    fn merge(&self, x: &T, y: &T) {}
+    fn connected(&self, x: &T, y: &T) -> Option<bool> {}
+    fn subset(&self, x: &T) -> Option<HashSet<T>> {}
+    fn subsets(&self) -> Option<HashMap<T, T>> {}
+}
 fn large<T: std::cmp::PartialOrd>(list: &[T]) -> &T {
     let mut largest = &list[0];
     for item in list {
