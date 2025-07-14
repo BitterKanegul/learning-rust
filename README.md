@@ -62,6 +62,17 @@ Generics and Traits generalize datatypes:
 One can restrict generic types to those that implement certain traits like PartialOrd for example
 
 
+Learning about Lambdas:
+  An example from canonical:
+    if !assn.bind.borrow().redexes.iter().all(|redex|
+            RedexConstraint {
+                instructions: WVec::new(redex),
+                position: 0
+            }.reduce(&mut redex_constraints, &mut assn.redex_changes, this.clone())
+        ) { return None; }
+
+|x| and then function body where we init a struct and call an implemented function.
+
 ```
 
 ===========================================================================

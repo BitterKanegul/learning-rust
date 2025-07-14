@@ -1,16 +1,9 @@
 // Learn me some good Rust
 // Gotta figure out how to get into *hygenic macros*
 //
-use hashbrown::HashMap;
-use hashbrown::HashSet;
 use rand::Rng;
 use std::cmp::Ordering;
 use std::io;
-
-struct MyDisjointSet<T> {
-    rootmap: HashMap<T, T>,
-}
-impl MyDisjointSet<T> {}
 fn large<T: std::cmp::PartialOrd>(list: &[T]) -> &T {
     let mut largest = &list[0];
     for item in list {
