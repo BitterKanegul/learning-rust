@@ -23,7 +23,12 @@ where
         }
     }
     fn getitem(&self, x: &T) -> Option<&T> {
-        self.rootmap.get(x)
+        parent = self.rootmap.get(x).unwrap();
+        while parent != self.rootmap.get(parent) {
+            let grandparent = self.rootmap.get(parent);
+            self.rootmap.insert(parent, self.rootmap.get(grandparent));
+            parent = self.rootmap.get(parent);
+        }
     }
     //Here is the conundrum, do I copy or do I clone...
     // if i were to be working directly with the hashes would be fun.
@@ -34,6 +39,7 @@ where
             self.sizemap.insert(x.clone(), 1);
         }
     }
+    //Need to figure out how to make the globals work here, borrow checker
     fn merge(&mut self, x: &T, y: &T) {
         let parent_x = self.rootmap.get(x).unwrap();
         let parent_y = self.rootmap.get(y).unwrap();
