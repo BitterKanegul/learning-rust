@@ -5,15 +5,25 @@ use hashbrown::HashMap;
 use hashbrown::HashSet;
 use rand::Rng;
 use std::cmp::Ordering;
+use std::hash::Hash;
 use std::io;
 
 struct MyDisjointSet<T> {
     rootmap: HashMap<T, T>,
+    sizemap: HashMap<T, i64>,
 }
-impl<T> MyDisjointSet<T> {
-    fn init(&self) {}
-    fn getitem(&self, x: &T) -> &T {
-        return x;
+impl<T> MyDisjointSet<T>
+where
+    T: Eq + Hash,
+{
+    fn new() -> Self {
+        MyDisjointSet {
+            rootmap: HashMap::new(),
+            sizemap: HashMap::new(),
+        }
+    }
+    fn getitem(&self, x: &T) -> Option<&T> {
+        self.rootmap.get(x)
     }
     fn add(&self, x: &T) {}
     fn merge(&self, x: &T, y: &T) {}

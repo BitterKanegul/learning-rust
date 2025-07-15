@@ -3,4 +3,5 @@
 
 // If based on hashmap, one can make it as generic as needed.
 // Now i know a bit about traits and enums and
-:w
+// Make a struct and implement functions for it.
+//

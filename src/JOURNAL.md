@@ -54,9 +54,22 @@ URL: https://github.com/chasenorman/Canonical
         - atomic ordering and usize
         - arc
         - hashbrown hashmap
-        -  :w
+        -
     - search
     - stats
+===============================
+Lessons to pick from this:
+  Some important standard traits to use:
+    Debug
+    Copy
+    Clone
+    Eq
+    PartialEq
+  Macros:
+    #[derive]
+    #[global_allocator]
+    thread_local!
+
 
 
 
