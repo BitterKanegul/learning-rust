@@ -28,13 +28,22 @@ where
     //Here is the conundrum, do I copy or do I clone...
     // if i were to be working directly with the hashes would be fun.
     // Can we have weak references here?
-    fn add(&self, x: &T) {
+    fn add(&mut self, x: &T) {
         if !self.rootmap.contains_key(x) {
-            self.rootmap.insert(x, x);
-            self.sizemap.insert(x, 1);
+            self.rootmap.insert(x.clone(), x.clone());
+            self.sizemap.insert(x.clone(), 1);
         }
     }
-    fn merge(&self, x: &T, y: &T) {}
+    fn merge(&mut self, x: &T, y: &T) {
+        let parent_x = self.rootmap.get(x).unwrap();
+        let parent_y = self.rootmap.get(y).unwrap();
+        let size_x = self.sizemap.get(x).unwrap();
+        let size_y = self.sizemap.get(y).unwrap();
+        if size_x > size_y {
+            self.rootmap.insert(parent_y.clone(), parent_x.clone());
+            self.sizemap.insert(parent_x.clone(), size_x + size_y);
+        }
+    }
     fn connected(&self, x: &T, y: &T) -> Option<bool> {}
     fn subset(&self, x: &T) -> Option<HashSet<T>> {}
     fn subsets(&self) -> Option<HashMap<T, T>> {}
