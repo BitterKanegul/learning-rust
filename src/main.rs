@@ -14,7 +14,7 @@ struct MyDisjointSet<T> {
 }
 impl<T> MyDisjointSet<T>
 where
-    T: Eq + Hash,
+    T: Eq + Hash + Clone,
 {
     fn new() -> Self {
         MyDisjointSet {
@@ -25,7 +25,15 @@ where
     fn getitem(&self, x: &T) -> Option<&T> {
         self.rootmap.get(x)
     }
-    fn add(&self, x: &T) {}
+    //Here is the conundrum, do I copy or do I clone...
+    // if i were to be working directly with the hashes would be fun.
+    // Can we have weak references here?
+    fn add(&self, x: &T) {
+        if !self.rootmap.contains_key(x) {
+            self.rootmap.insert(x, x);
+            self.sizemap.insert(x, 1);
+        }
+    }
     fn merge(&self, x: &T, y: &T) {}
     fn connected(&self, x: &T, y: &T) -> Option<bool> {}
     fn subset(&self, x: &T) -> Option<HashSet<T>> {}
